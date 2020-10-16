@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Cube.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Intersect.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Lib.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Lib.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Light.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Light.cpp.o"

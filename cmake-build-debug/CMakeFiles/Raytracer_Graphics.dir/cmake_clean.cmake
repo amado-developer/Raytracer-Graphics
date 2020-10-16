@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Raytracer_Graphics.dir/Cube.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/Intersect.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/Lib.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/Light.cpp.o"

@@ -11,7 +11,9 @@
 class Plane
 {
     private:
-        tuple<double, double, double> position;
+    Plane(tuple<double, double, double> position, tuple<double, double, double> normal);
+
+    tuple<double, double, double> position;
         Materials material;
         tuple<double, double, double> normal;
         Lib lib;

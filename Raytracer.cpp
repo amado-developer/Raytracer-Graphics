@@ -4,6 +4,7 @@
 # define M_PI
 
 #include "Raytracer.h"
+#include "Cube.h"
 #include <iostream>
 #include <vector>
 #include <tuple>
@@ -80,7 +81,7 @@ Materials Raytracer::sceneIntersect(tuple<double, double, double> origin, tuple<
 //                auto hit = obj.rayIntersect(origin, direction);
 //                if (hit.hasImpacted())
 //                {
-//                    if (hit.getDistance())
+//                    if (hit.getDistance() < zbuffer)
 //                    {
 //                        zbuffer = hit.getDistance();
 //                        material = obj.getMaterial();
@@ -90,8 +91,26 @@ Materials Raytracer::sceneIntersect(tuple<double, double, double> origin, tuple<
 //                }
 //            }
 //        }
-//    }
+
+        case 3:
+        {
+            for (auto obj : this->cubeScene)
+            {
+                auto hit = obj.rayIntersect(origin, direction);
+                if (hit.hasImpacted())
+                {
+                    if (hit.getDistance() < zbuffer)
+                    {
+                        zbuffer = hit.getDistance();
+                        material = obj.getMaterial();
+                        material.setImpacted(true);
+                        this->intersect = hit;
+                    }
+                }
+            }
+        }
     }
+
     return material;
 }
 vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<double, double, double> direction, int recursion) {
@@ -212,6 +231,11 @@ void Raytracer::setScene(Sphere sphere, double refractionIndex)
 void Raytracer::setScene(Plane plane)
 {
     this->planeScene.push_back(plane);
+}
+
+void Raytracer::setScene(Cube cube)
+{
+    this->cubeScene.push_back(cube);
 }
 void Raytracer::render3D()
 {

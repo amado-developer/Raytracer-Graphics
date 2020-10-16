@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.cpp">
+			<Option target="Raytracer_Graphics"/>
+		</Unit>
+		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h">
+			<Option target="Raytracer_Graphics"/>
+		</Unit>
 		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.cpp">
 			<Option target="Raytracer_Graphics"/>
 		</Unit>

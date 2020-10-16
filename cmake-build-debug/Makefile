@@ -143,6 +143,33 @@ Raytracer_Graphics/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/build
 .PHONY : Raytracer_Graphics/fast
 
+Cube.o: Cube.cpp.o
+
+.PHONY : Cube.o
+
+# target to build an object file
+Cube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Cube.cpp.o
+.PHONY : Cube.cpp.o
+
+Cube.i: Cube.cpp.i
+
+.PHONY : Cube.i
+
+# target to preprocess a source file
+Cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Cube.cpp.i
+.PHONY : Cube.cpp.i
+
+Cube.s: Cube.cpp.s
+
+.PHONY : Cube.s
+
+# target to generate assembly for a file
+Cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Cube.cpp.s
+.PHONY : Cube.cpp.s
+
 Intersect.o: Intersect.cpp.o
 
 .PHONY : Intersect.o
@@ -395,6 +422,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Raytracer_Graphics"
+	@echo "... Cube.o"
+	@echo "... Cube.i"
+	@echo "... Cube.s"
 	@echo "... Intersect.o"
 	@echo "... Intersect.i"
 	@echo "... Intersect.s"

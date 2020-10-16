@@ -12,6 +12,8 @@
 #include "Light.h"
 #include "Plane.h"
 #include "Texture.h"
+#include "Cube.h"
+
 using namespace std;
 class Raytracer
 {
@@ -23,6 +25,7 @@ class Raytracer
         double height;
     vector<Sphere> scene;
         vector<Plane> planeScene;
+        vector<Cube> cubeScene;
         void glPoint(int x, int y);
         vector<unsigned char> fileHeader();
         vector<unsigned char> infoHeader();
@@ -54,6 +57,8 @@ class Raytracer
     void render3D();
 
     void setCurrentTexture(Texture envMap);
+
+    void setScene(Cube plane);
 };
 
 

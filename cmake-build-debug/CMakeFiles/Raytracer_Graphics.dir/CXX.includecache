@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h
+vector
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/vector
+Plane.h
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Plane.h
+Lib.h
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Lib.h
+Cube.h
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h
+
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.h
 tuple
 -
@@ -47,6 +57,8 @@ Plane.h
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Plane.h
 Texture.h
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+Cube.h
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h
 
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Sphere.h
 vector
@@ -81,4 +93,6 @@ Plane.h
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Plane.h
 Texture.h
 /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+Cube.h
+/Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h
 

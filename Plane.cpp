@@ -12,19 +12,37 @@ Plane::Plane(tuple<double, double, double> position, tuple<double, double, doubl
     this->material = material;
 }
 
+Plane::Plane(tuple<double, double, double> position, tuple<double, double, double> normal)
+{
+    this->position = position;
+    this->normal = normal;
+}
+
 Materials Plane::getMaterial()
 {
     return this->material;
 }
+
 Intersect Plane::rayIntersect(tuple<double, double, double> origin, tuple<double, double, double> direction)
 {
-    auto orig = make_tuple(get<0>(origin), get<1>(origin) + 1, get<2>(origin));
-    auto d = - (get<1>(orig) + get<1>(position)) / get<1>(direction);
-    auto pt = lib.sum(orig, lib.mult(direction, d));
-    if(d <= 0 || abs(get<0>(pt) > 2.0 || get<2>(pt) > -5 || get<2>(pt) < -10.0))
-    {
-        return Intersect(-1, false, make_tuple(0, 0, 0), make_tuple(0,0,0));
+    auto d{lib.dot(direction, normal)};
+
+if(abs(d) > 0.0001) {
+    auto t{lib.dot(normal, lib.sub(position, origin)) / d};
+    if (t > 0.0) {
+        auto hit{lib.sum
+                (
+                        origin,
+                        make_tuple(get<0>(direction) * t,
+                                   get<1>(direction) * t,
+                                   get<2>(direction) * t))
+        };
+        return Intersect(t, true, hit, normal);
     }
-    auto normal = make_tuple(0.0, 1.0, 0.0);
-    return Intersect(d, true, pt, normal);
 }
+
+return Intersect(0.0, false, make_tuple(0, 0, 0), make_tuple(0,0,0));
+}
+
+
+
