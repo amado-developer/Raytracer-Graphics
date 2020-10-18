@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Raytracer.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Sphere.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Sphere.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o"
+  "/Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o"
   "/Users/amado-developer/College/Graphics/Raytracer-Graphics/main.cpp" "/Users/amado-developer/College/Graphics/Raytracer-Graphics/cmake-build-debug/CMakeFiles/Raytracer_Graphics.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

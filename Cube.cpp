@@ -18,6 +18,19 @@ Cube::Cube(tuple<double, double, double> position, double size, Materials materi
     this->planes.push_back(Plane(lib.sum(position, make_tuple(0.0, 0.0, -size * 0.5)), make_tuple(0.0, 0.0, -1.0), material));
 }
 
+Cube::Cube(tuple<double, double, double> position, double size)
+{
+    this->position = position;
+    this->size = size;
+
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(size * 0.5, 0.0, 0.0)), make_tuple(1.0, 0.0, 0.0), material));
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(-size * 0.5, 0.0, 0.0)), make_tuple(-1.0, 0.0, 0.0), material));
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(0.0, size * 0.5, 0.0)), make_tuple(0.0, 1.0, 0.0), material));
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(0.0, -size * 0.5, 0.0)), make_tuple(0.0, -1.0, 0.0), material));
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(0.0, 0.0, size * 0.5)), make_tuple(0.0, 0.0, 1.0), material));
+    this->planes.push_back(Plane(lib.sum(position, make_tuple(0.0, 0.0, -size * 0.5)), make_tuple(0.0, 0.0, -1.0), material));
+}
+
  Intersect Cube::rayIntersect(tuple<double, double, double> origin, tuple<double, double, double> direction)
  {
      double epsilon{0.001};

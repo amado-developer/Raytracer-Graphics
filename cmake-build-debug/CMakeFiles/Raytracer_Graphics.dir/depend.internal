@@ -41,6 +41,7 @@ CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Raytracer.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Sphere.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.h
 CMakeFiles/Raytracer_Graphics.dir/Sphere.cpp.o
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Lib.h
@@ -52,6 +53,13 @@ CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Lib.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.cpp
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Lib.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Materials.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.cpp
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Cube.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Intersect.h
@@ -62,4 +70,5 @@ CMakeFiles/Raytracer_Graphics.dir/main.cpp.o
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Raytracer.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Sphere.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h
+ /Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.h
  /Users/amado-developer/College/Graphics/Raytracer-Graphics/main.cpp

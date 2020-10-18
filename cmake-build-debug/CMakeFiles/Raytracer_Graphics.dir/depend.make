@@ -40,6 +40,7 @@ CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o: ../Raytracer.cpp
 CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o: ../Raytracer.h
 CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o: ../Sphere.h
 CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o: ../Texture.h
+CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o: ../Triangle.h
 
 CMakeFiles/Raytracer_Graphics.dir/Sphere.cpp.o: ../Intersect.h
 CMakeFiles/Raytracer_Graphics.dir/Sphere.cpp.o: ../Lib.h
@@ -52,6 +53,13 @@ CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o: ../Lib.h
 CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o: ../Texture.cpp
 CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o: ../Texture.h
 
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Intersect.h
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Lib.h
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Materials.h
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Texture.h
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Triangle.cpp
+CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o: ../Triangle.h
+
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Cube.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Intersect.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Lib.h
@@ -61,5 +69,6 @@ CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Plane.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Raytracer.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Sphere.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Texture.h
+CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../Triangle.h
 CMakeFiles/Raytracer_Graphics.dir/main.cpp.o: ../main.cpp
 

@@ -14,10 +14,9 @@ class Cube
 {
     public:
         Cube(tuple<double, double, double> position, double size, Materials material);
-
-    Intersect rayIntersect(tuple<double, double, double> origin, tuple<double, double, double> direction);
-
-    Materials getMaterial();
+        Cube(tuple<double, double, double> position, double size);
+        Intersect rayIntersect(tuple<double, double, double> origin, tuple<double, double, double> direction);
+        Materials getMaterial();
 
 private:
         vector<Plane> planes{};

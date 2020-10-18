@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Raytracer_Graphics.dir/Raytracer.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/Sphere.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.o"
+  "CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o"
   "CMakeFiles/Raytracer_Graphics.dir/main.cpp.o"
   "Raytracer_Graphics"
   "Raytracer_Graphics.pdb"

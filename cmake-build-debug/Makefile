@@ -386,6 +386,33 @@ Texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
+Triangle.o: Triangle.cpp.o
+
+.PHONY : Triangle.o
+
+# target to build an object file
+Triangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.o
+.PHONY : Triangle.cpp.o
+
+Triangle.i: Triangle.cpp.i
+
+.PHONY : Triangle.i
+
+# target to preprocess a source file
+Triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.i
+.PHONY : Triangle.cpp.i
+
+Triangle.s: Triangle.cpp.s
+
+.PHONY : Triangle.s
+
+# target to generate assembly for a file
+Triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Raytracer_Graphics.dir/build.make CMakeFiles/Raytracer_Graphics.dir/Triangle.cpp.s
+.PHONY : Triangle.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -449,6 +476,9 @@ help:
 	@echo "... Texture.o"
 	@echo "... Texture.i"
 	@echo "... Texture.s"
+	@echo "... Triangle.o"
+	@echo "... Triangle.i"
+	@echo "... Triangle.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

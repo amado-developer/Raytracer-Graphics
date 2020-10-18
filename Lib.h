@@ -21,5 +21,8 @@ class Lib
         tuple<double, double, double> reflect(tuple<double, double, double> I, tuple<double, double, double> N);
         tuple<double, double, double> refract(tuple<double, double, double> I, tuple<double, double, double> N,
                                               double refractiveIndex);
+        tuple<double, double, double>
+         barycentric(tuple<double, double, double> A, tuple<double, double, double> B, tuple<double, double, double> C,
+                tuple<double, double> P);
 };
 #endif //RT1_SPHERES_LIB_H

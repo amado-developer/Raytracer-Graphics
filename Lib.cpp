@@ -90,6 +90,18 @@ tuple<double, double, double> Lib::refract(tuple<double, double, double> I, tupl
 
    return norm(sum(mult(I, eta), mult(N, (eta * cosi, - cost))));
 }
+tuple<double, double, double> Lib::barycentric(tuple<double, double, double> A, tuple<double, double, double> B, tuple<double, double, double> C, tuple<double, double> P)
+{
+    tuple<double, double, double> c = cross(make_tuple(get<0>(B) - get<0>(A), get<0>(C) - get<0>(A),get<0>(A) - get<0>(P)),
+                                                 (make_tuple(get<1>(B) - get<1>(A), get<1>(C) - get<1>(A),get<1>(A) - get<1>(P))));
+    auto absValue{abs(get<2>(c))};
+    if(absValue < 1.0)
+        return make_tuple(-1.0, -1.0, -1.0);
+
+    double calc0{(get<0>(c) + get<1>(c)) / get<2>(c)};
+    double calc1{1 - (get<0>(c) + get<1>(c) / get<2>(c))};
+    return make_tuple(1 - ((get<0>(c)  + get<1>(c)) / get<2>(c)), get<1>(c) / get<2>(c), get<0>(c) / get<2>(c));
+}
 
 
 

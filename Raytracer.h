@@ -12,7 +12,9 @@
 #include "Light.h"
 #include "Plane.h"
 #include "Texture.h"
+#include "Triangle.h"
 #include "Cube.h"
+
 
 using namespace std;
 class Raytracer
@@ -23,9 +25,10 @@ class Raytracer
         unsigned char pointColor[3];
         double width;
         double height;
-    vector<Sphere> scene;
+        vector<Sphere> scene;
         vector<Plane> planeScene;
         vector<Cube> cubeScene;
+        vector<Triangle> triangleScene;
         void glPoint(int x, int y);
         vector<unsigned char> fileHeader();
         vector<unsigned char> infoHeader();
@@ -51,15 +54,10 @@ class Raytracer
         Materials sceneIntersect(tuple<double, double, double> origin, tuple<double, double, double> direction);
         void setEnvMap(Texture envMap);
         vector<vector<vector<unsigned char>>> framebuffer;
-
-    Raytracer();
-
-    void render3D();
-
-    void setCurrentTexture(Texture envMap);
-
-    void setScene(Cube plane);
+        Raytracer();
+        void render3D();
+        void setCurrentTexture(Texture envMap);
+        void setScene(Cube plane);
+        void setScene(Triangle triangle);
 };
-
-
 #endif //RT1_SPHERES_RAYTRACER_H

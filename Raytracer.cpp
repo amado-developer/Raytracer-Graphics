@@ -73,24 +73,24 @@ Materials Raytracer::sceneIntersect(tuple<double, double, double> origin, tuple<
                 }
             }
         }
-//
-//        case 2:
-//        {
-//            for (auto obj : this->planeScene)
-//            {
-//                auto hit = obj.rayIntersect(origin, direction);
-//                if (hit.hasImpacted())
-//                {
-//                    if (hit.getDistance() < zbuffer)
-//                    {
-//                        zbuffer = hit.getDistance();
-//                        material = obj.getMaterial();
-//                        material.setImpacted(true);
-//                        this->intersect = hit;
-//                    }
-//                }
-//            }
-//        }
+
+        case 2:
+        {
+            for (auto obj : this->planeScene)
+            {
+                auto hit = obj.rayIntersect(origin, direction);
+                if (hit.hasImpacted())
+                {
+                    if (hit.getDistance() < zbuffer)
+                    {
+                        zbuffer = hit.getDistance();
+                        material = obj.getMaterial();
+                        material.setImpacted(true);
+                        this->intersect = hit;
+                    }
+                }
+            }
+        }
 
         case 3:
         {
@@ -119,7 +119,7 @@ vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<do
     vector<double> reflectColor{};
     vector<double> refractColor{};
     vector<double> ray{};
-    if ((impactedMaterial.getDiffuse().size() == 0 && get<0>(this->intersect.textCoords) == 0 && get<1>(this->intersect.textCoords) == 0)|| recursion >= MAX_RECURSION_DEPTH)
+    if (intersect.getDistance() == 0.0  || recursion >= MAX_RECURSION_DEPTH )
     {
         return {50.0, 50.0, 200.0};
     }
@@ -232,10 +232,13 @@ void Raytracer::setScene(Plane plane)
 {
     this->planeScene.push_back(plane);
 }
-
 void Raytracer::setScene(Cube cube)
 {
     this->cubeScene.push_back(cube);
+}
+void Raytracer::setScene(Triangle triangle)
+{
+    this->triangleScene.push_back(triangle);
 }
 void Raytracer::render3D()
 {

@@ -134,6 +134,12 @@
 		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Texture.h">
 			<Option target="Raytracer_Graphics"/>
 		</Unit>
+		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.cpp">
+			<Option target="Raytracer_Graphics"/>
+		</Unit>
+		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/Triangle.h">
+			<Option target="Raytracer_Graphics"/>
+		</Unit>
 		<Unit filename="/Users/amado-developer/College/Graphics/Raytracer-Graphics/main.cpp">
 			<Option target="Raytracer_Graphics"/>
 		</Unit>

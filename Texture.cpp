@@ -71,16 +71,14 @@ void Texture::read()
 }
 vector<double> Texture::getColor(double tx, double ty)
 {
-    if(tx == 0.9882387841104141 && ty == 0.22773300398486915)
+    if(tx != 0 && tx != 0)
     {
-        int l = this->pixels[0].size();
-        int l2 = this->pixels.size();
-        int a = 0;
+
     }
     if(tx >= 0 && tx <= 1.0 && ty >= 0 && ty <= 1)
     {
-        int x = tx * this->widht - 1;
-        int y = ty * this->height - 1;
+        int x = tx * this->widht;
+        int y = ty * this->height;
         auto color = this->pixels[x][y];
         return this->pixels[x][y];
     }
