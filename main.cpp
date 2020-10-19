@@ -5,8 +5,10 @@
 #include "Texture.h"
 #include "Cube.h";
 #include "Triangle.h"
+#include <chrono>
 int main()
 {
+    auto begin = std::chrono::high_resolution_clock::now();
     Raytracer r;
     r.glCreateWindow(800, 600);
     r.glClearColor(50.0, 50.0, 200.0);
@@ -18,12 +20,46 @@ int main()
     Materials eye({150.0, 100.0, 200.0}, {0.9, 0.1, 0.0, 0.0}, 11.0);
     Materials nose({255, 50.0, 50.0}, {0.9, 0.1, 0.0, 0.0}, 11.0);
     Materials antennae({50.0, 50.0, 50.0}, {0.9, 0.1, 0.0, 0.0}, 11.0);
+    Materials blackEye({0.0, 0.0, 0.0}, {0.0, 0.1, 0.0, 0.0}, 50.0);
+    Materials whiteEye({255.0, 255.0, 255.0}, {1.0, 0.0, 0.0, 0.0}, 50.0);
+    Materials pig({253.0, 215.0, 228.0}, {0.9, 0.1, 0.0, 0.0}, 11.0);
+    Materials pigMouth({247.0, 225.0, 232.0}, {0.9, 0.1, 0.0, 0.0}, 11.0);
     r.setLight(Light(make_tuple(0.5, 2.0, 1.0), 1.0));
     r.type = 1;
-
     r.setCurrentTexture(sunTexture);
     r.setScene(Sphere(make_tuple(4.0, 4.0, -15.0), 1.0), 0.0);
-//    r.setScene(Plane(make_tuple(0.0, 0.0, -10.0), make_tuple(0.0, 1.0, 0.05), leaf));
+//    r.setScene(Plane(make_tuple(0.0, -1.0, -10.0), make_tuple(0.0, 1.0, 0.1), leaf));
+
+    //Pig
+    //Head
+    r.setScene(Cube(make_tuple(-2.2, -0.1666666, -3.85), 0.5, pig));
+    //0.45
+
+    //Mouth
+    r.setScene(Cube(make_tuple(-2.2, -0.26666, -3.55), 0.1666666, pigMouth));
+    //0.28334
+
+    //Body
+    r.setScene(Cube(make_tuple(-2.2, -0.666666, -4.5), 0.5, pig));
+    r.setScene(Cube(make_tuple(-2.2, -0.666666, -4.0), 0.5, pig));
+
+//    //Legs
+//    //Left Leg
+    r.setScene(Cube(make_tuple(-2.38, -0.95, -3.85), 0.1666666, pig));
+    r.setScene(Cube(make_tuple(-2.38, -1.1, -3.85), 0.1666666, pig));
+//
+//    //Right Leg
+    r.setScene(Cube(make_tuple(-2.040, -0.95, -3.85), 0.1666666, pig));
+    r.setScene(Cube(make_tuple(-2.040, -1.1, -3.85), 0.1666666, pig));
+
+    //Eyes
+    //Left eye
+    r.setScene(Cube(make_tuple(-2.4, -0.066666, -3.6), 0.0625, blackEye));
+    r.setScene(Cube(make_tuple(-2.3375,-0.066666, -3.6), 0.0625, whiteEye));
+
+    //Right eye
+    r.setScene(Cube(make_tuple(-1.99, -0.066666, -3.6), 0.0625, blackEye));
+    r.setScene(Cube(make_tuple(-2.0525,  -0.066666, -3.6), 0.0625, whiteEye));
 
     //Letter A
     //Left
@@ -149,5 +185,9 @@ int main()
 
     r.render();
     r.glFinish("proyecto.bmp");
+
+    auto end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+    printf("Time measured: %.3f Minutes.\n", (elapsed.count() * 1e-9) / 60);
     return 0;
 }
