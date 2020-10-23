@@ -121,7 +121,7 @@ vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<do
     vector<double> ray{};
     if (intersect.getDistance() == 0.0  || recursion >= MAX_RECURSION_DEPTH )
     {
-        return {50.0, 50.0, 200.0};
+        return {-1.0, -1.0, -1.0};
     }
 
     if(impactedMaterial.getDiffuse().size() > 0)
@@ -310,11 +310,20 @@ void Raytracer::render()
             double j{(2.0*(y + 0.5)/height - 1.0)*tan(fov/2.0)};
             tuple<double, double, double> direction{this->lib.norm(make_tuple(i, j, -1))};
             auto color {(this->castRay(make_tuple(0, 0, 0), direction, 0))};
-            double r = color.at(0) / 255.0;
-            double g = color.at(1) / 255.0;
-            double b = color.at(2) / 255.0;
-            this->glColor(r, g, b);
-            this->glPoint(x, y);
+
+            if(color[0] == -1.0)
+            {
+                continue;
+            }
+            else
+            {
+                double r = color.at(0) / 255.0;
+                double g = color.at(1) / 255.0;
+                double b = color.at(2) / 255.0;
+                this->glColor(r, g, b);
+                this->glPoint(x, y);
+            }
+
         }
     }
 }

@@ -13,6 +13,10 @@ int main()
     r.glCreateWindow(800, 600);
     r.glClearColor(50.0, 50.0, 200.0);
 
+    Texture background("back.bmp");
+    background.readBackground();
+    r.framebuffer = background.backgroundCharPixels;
+
     Texture sunTexture("sun.bmp");
     sunTexture.readBackground();
 
@@ -27,10 +31,16 @@ int main()
     Materials wool({230.0, 230.0, 230.0}, {1.0, 0.0, 0.0, 0.0}, 2.0);
     Materials brownWool({136.0, 125.0, 113.0}, {1.0, 0.0, 0.0, 0.0}, 2.0);
 
+    Materials creeper1({143.0,227.0,143.0}, {0.7, 0.1, 0.1, 0.1}, 2.0);
+    Materials creeper2({15.0,128.0,15.0}, {0.5, 0.5, 0.0, 0.0}, 2.0);
+    Materials creeper3({13.0,181.0,13.0}, {0.5, 0.5, 0.0, 0.0}, 2.0);
+    Materials creeper4({96.0,158.0,96.0}, {0.5, 0.5, 0.0, 0.0}, 2.0);
+    Materials creeper5({0.0,69.0,0.0}, {0.5, 0.5, 0.0, 0.0}, 2.0);
+
     r.setLight(Light(make_tuple(0.5, 2.0, 1.0), 1.0));
     r.type = 1;
     r.setCurrentTexture(sunTexture);
-//    r.setScene(Sphere(make_tuple(4.0, 4.0, -15.0), 1.0), 0.0);
+    r.setScene(Sphere(make_tuple(4.0, 4.0, -15.0), 1.0), 0.0);
 //    r.setScene(Plane(make_tuple(0.0, -1.0, -10.0), make_tuple(0.0, 1.0, 0.1), leaf));
 
     //Pig
@@ -66,12 +76,16 @@ int main()
     r.setScene(Cube(make_tuple(-1.99, -0.066666, -3.6), 0.0625, blackEye));
     r.setScene(Cube(make_tuple(-2.0525,  -0.066666, -3.6), 0.0625, whiteEye));
 
-    //====================================Sheep========================================================
+ //   ====================================Sheep========================================================
     //Head
     r.setScene(Cube(make_tuple(0.0, -0.1666666, -3.85), 0.5, wool));
-//
+
+    //Face
+    r.setScene(Cube(make_tuple(-0.11, -0.15, -3.55), 0.25, brownWool));
+    r.setScene(Cube(make_tuple(0.11, -0.15, -3.55), 0.25, brownWool));
+    r.setScene(Cube(make_tuple(0.0, -0.265, -3.55), 0.25, brownWool));
     //Mouth
-    r.setScene(Cube(make_tuple(0.0, -0.26666, -3.55), 0.1666666, pigMouth));
+    r.setScene(Cube(make_tuple(0.0, -0.31, -3.50), 0.1666666, pigMouth));
 
     //Body
     r.setScene(Cube(make_tuple(0.0, -0.666666, -4.0), 0.5, wool));
@@ -87,14 +101,38 @@ int main()
 
     //Eyes
     //Left eye
-    r.setScene(Cube(make_tuple(-0.2, -0.066666, -3.6), 0.0625, blackEye));
-    r.setScene(Cube(make_tuple(-0.1375,-0.066666, -3.6), 0.0625, whiteEye));
+    r.setScene(Cube(make_tuple(-0.19, -0.066666, -3.25), 0.0625, blackEye));
+    r.setScene(Cube(make_tuple(-0.1275,-0.066666, -3.25), 0.0625, whiteEye));
 
     //Right eye
-    r.setScene(Cube(make_tuple(0.21, -0.066666, -3.6), 0.0625, blackEye));
-    r.setScene(Cube(make_tuple(0.1475,  -0.066666, -3.6), 0.0625, whiteEye));
+    r.setScene(Cube(make_tuple(0.19, -0.066666, -3.25), 0.0625, blackEye));
+    r.setScene(Cube(make_tuple(0.1275,  -0.066666, -3.25), 0.0625, whiteEye));
 
-//    //Letter A
+    //======================================Creeper=============================================================
+    //Head
+    r.setScene(Cube(make_tuple(1.8, -0.666666, -4.0), 1.0, creeper1));
+
+    //Face
+    //Eyes
+    r.setScene(Cube(make_tuple(1.6, -0.5, -3.55), 0.20, blackEye));
+    r.setScene(Cube(make_tuple(2.04, -0.5, -3.55), 0.20, blackEye));
+    r.setScene(Cube(make_tuple(1.830, -0.71, -3.55), 0.20, blackEye));
+
+    //Mouth?
+    r.setScene(Cube(make_tuple(1.830, -0.81, -3.55), 0.20, blackEye));
+
+    //left Mouth?
+    r.setScene(Cube(make_tuple(1.67, -0.729, -3.53), 0.1, blackEye));
+    r.setScene(Cube(make_tuple(1.67, -0.829, -3.53), 0.1, blackEye));
+    r.setScene(Cube(make_tuple(1.67, -0.929, -3.53), 0.1, blackEye));
+
+    //Right Mouth?
+    r.setScene(Cube(make_tuple(1.994, -0.729, -3.53), 0.1, blackEye));
+    r.setScene(Cube(make_tuple(1.994, -0.829, -3.53), 0.1, blackEye));
+    r.setScene(Cube(make_tuple(1.994, -0.929, -3.53), 0.1, blackEye));
+
+
+    //==================================Letter A================================================================
 //    //Left
 //    r.setScene(Cube(make_tuple(-3.0, -1.0, -5.0), 0.25, leaf));
 //    r.setScene(Cube(make_tuple(-2.95, -0.75, -5.0),0.25, leaf));

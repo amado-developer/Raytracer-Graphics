@@ -20,6 +20,7 @@ class Texture
 
     public:
         vector<vector<vector<double>>> backgroundPixels{};
+        vector<vector<vector<unsigned char>>> backgroundCharPixels{};
         Texture(char* path);
 
     Texture();

@@ -117,7 +117,9 @@ void Texture::readBackground()
     int size = 3 * width * height;
     vector<vector<vector<double>>>pixels(width, vector<vector<double>>(height, vector<double >(3)));
     vector<vector<vector<double>>>backgroundPixels(width, vector<vector<double>>(height, vector<double>(3)));
+    vector<vector<vector<unsigned char >>>backgroundCharPixels(width, vector<vector<unsigned char >>(height, vector<unsigned char >(3)));
     this->backgroundPixels = backgroundPixels;
+    this->backgroundCharPixels = backgroundCharPixels;
     this->pixels = pixels;
     int x{0};
     int y{0};
@@ -151,6 +153,10 @@ void Texture::readBackground()
         this->backgroundPixels[y][x][2] = (unsigned char)(b);
         this->backgroundPixels[y][x][1] = (unsigned char)(g);
         this->backgroundPixels[y][x][0] = (unsigned char)(r);
+
+        this->backgroundCharPixels[y][x][2] = (unsigned char)(b);
+        this->backgroundCharPixels[y][x][1] = (unsigned char)(g);
+        this->backgroundCharPixels[y][x][0] = (unsigned char)(r);
         ++y;
     }
     fclose(f);
