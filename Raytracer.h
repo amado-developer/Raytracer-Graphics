@@ -35,7 +35,8 @@ class Raytracer
         Lib lib;
         Light light;
         Intersect intersect;
-        Texture texture;
+        vector<Texture> textures;
+        double textureCounter{};
 
     public:
         int type;

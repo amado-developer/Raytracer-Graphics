@@ -14,6 +14,7 @@ class Materials
         vector<double> albedo;
         double spect;
         bool impacted;
+        Texture texture;
 
     public:
         Materials(vector<double> diffuse, vector<double> albedo, double spect);
@@ -22,6 +23,8 @@ class Materials
         const vector<double> &getDiffuse() const;
         const vector<double> &getAlbedo() const;
         double getSpect() const;
+        double textIndex{-1.0};
+        bool isTexture{false};
         void setImpacted(bool impacted);
 };
 

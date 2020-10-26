@@ -110,7 +110,6 @@ Materials Raytracer::sceneIntersect(tuple<double, double, double> origin, tuple<
             }
         }
     }
-
     return material;
 }
 vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<double, double, double> direction, int recursion) {
@@ -124,7 +123,7 @@ vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<do
         return {-1.0, -1.0, -1.0};
     }
 
-    if(impactedMaterial.getDiffuse().size() > 0)
+    if(impactedMaterial.isTexture == false )
     {
         auto lightDirection{lib.norm(lib.sub(this->light.position, tempIntersect.point))};
         auto lightDistance{lib.length(lib.sub(this->light.position, tempIntersect.point))};
@@ -216,11 +215,15 @@ vector<double> Raytracer::castRay(tuple<double, double, double> origin, tuple<do
     }
     else
     {
-        vector<double> color = texture.getColor(get<0>(intersect.textCoords), get<1>(intersect.textCoords));
-        ray.push_back(color[0] * 255);
-        ray.push_back(color[1] * 255);
-        ray.push_back(color[2] * 255);
-        return ray;
+        if(impactedMaterial.isTexture && impactedMaterial.textIndex > -1)
+        {
+            vector<double> color = this->textures[impactedMaterial.textIndex].getColor(get<0>(intersect.textCoords),
+                                                                                       get<1>(intersect.textCoords));
+            ray.push_back(color[0] * 255);
+            ray.push_back(color[1] * 255);
+            ray.push_back(color[2] * 255);
+            return ray;
+        }
     }
 }
 void Raytracer::setScene(Sphere sphere, double refractionIndex)
@@ -393,7 +396,7 @@ void Raytracer::setLight(Light light)
 }
 void Raytracer::setCurrentTexture(Texture texture)
 {
-    this->texture = texture;
+    this->textures.push_back(texture);
 }
 Raytracer::Raytracer()
 {

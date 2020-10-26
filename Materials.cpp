@@ -37,4 +37,3 @@ void Materials::setImpacted(bool impacted)
 {
     Materials::impacted = impacted;
 }
-
